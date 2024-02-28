@@ -148,7 +148,6 @@ class PostManager {
                 imageURLs: doc["imageUrls"] as! [String]
             )
             
-            // Resim URL'lerini al
             var remainingImageCount = post.imageURLs.count
             
             for imagePath in post.imageURLs {
@@ -162,7 +161,7 @@ class PostManager {
                         post.imageDownloadURLS.append(downloadURL)
                     }
                     
-                    // Tüm resim URL'leri alındığında sonucu tamamla
+
                     if remainingImageCount == 0 {
                         completion(post, nil)
                     }

@@ -16,13 +16,20 @@ struct PlacePosts: Identifiable {
     var imageURLs: [String] = []
     var imageDownloadURLS: [URL] = []
     
-    init(id: String, userId: String, placeTitle: String, placeDescription: String, location: LocationModel, imageURLs: [String]) {
+    
+    init(id: String, userId: String, placeTitle: String, placeDescription: String, location: LocationModel) {
         self.id = id
         self.userId = userId
         self.placeTitle = placeTitle
         self.placeDescription = placeDescription
         self.location = location
-        self.imageURLs = imageURLs
+    }
+    init(id: String, userId: String, placeTitle: String, placeDescription: String, location: LocationModel,imageURLs: [String]) {
+        self.id = id
+        self.userId = userId
+        self.placeTitle = placeTitle
+        self.placeDescription = placeDescription
+        self.location = location
     }
 }
 
