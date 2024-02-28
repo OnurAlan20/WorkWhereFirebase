@@ -44,11 +44,24 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    
     @IBAction func addPost(_ sender: UIButton) {
-        
-        postManager.addPost(PlacePosts(id: "postId", userId: "userId", placeTitle: "PlaceTitle", placeDescription: "PlaceDescription", location: LocationModel(latitude: 12, longitute: 13, title: "Aşk Cafe", city: "Ankara", district: "Bahçelievler"), imageURLs: ["img1","img2","img3"]))
+        /*
+         postManager.addPost(PlacePosts(id: "postId333", userId: "userId", placeTitle: "PlaceTitle", placeDescription: "PlaceDescription", location: LocationModel(latitude: 12, longitute: 13, title: "Aşk Cafe", city: "Ankara", district: "Bahçelievler"), imageURLs: []))
          
+         
+         */
+        /*
+        postManager.getAllPosts(completion: { PlacePosts, error in
+            print(PlacePosts)
+        })
+         */
+        postManager.getPostById(wantedID: "postId333") { placePost, error in
+            print(placePost)
         }
+        //postManager.getPostById()
+    }
 
     
     

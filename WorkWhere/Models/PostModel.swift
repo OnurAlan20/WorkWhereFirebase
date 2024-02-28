@@ -13,7 +13,8 @@ struct PlacePosts: Identifiable {
     let placeTitle: String
     let placeDescription: String
     let location: LocationModel
-    let imageURLs: [String]
+    var imageURLs: [String] = []
+    var imageDownloadURLS: [URL] = []
     
     init(id: String, userId: String, placeTitle: String, placeDescription: String, location: LocationModel, imageURLs: [String]) {
         self.id = id
