@@ -40,9 +40,14 @@ class ViewController: UIViewController {
  */
     
     @IBAction func googleSignIn(_ sender: UIButton) {
+        /*
         Task { @MainActor in
             print(try await firebase.signWithGoogle())
         }
+         */
+        Task { @MainActor in
+        }
+        
     }
     
     

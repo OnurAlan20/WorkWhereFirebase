@@ -11,6 +11,7 @@ import GoogleSignIn
 import GoogleSignInSwift
 import FirebaseFirestore
 
+
 struct AuthDataResultModel{
     let uid:String
     let email:String?
@@ -62,7 +63,33 @@ class AuthManager {
         return AuthDataResultModel(user: authResult.user)
     }
      */
-         
+    
+    
+    
+    func getUserById(id: String, completion: @escaping (UserModel?) -> Void) {
+        db.collection("user").whereField("id", isEqualTo: id).getDocuments { (snapshot, error) in
+            guard let snapshot = snapshot, error == nil else {
+                print("Hata oluştu: \(error)")
+                completion(nil) // Hata durumunda nil döndür
+                return
+            }
+            
+            if let doc = snapshot.documents.first {
+                let userModel = UserModel(
+                    id: doc["id"] as! String,
+                    email: doc["email"] as! String,
+                    profileImage: doc["profileImage"] as! String,
+                    name: doc["name"] as! String,
+                    posts: doc["posts"] as! [String]
+                )
+                completion(userModel)
+            } else {
+                print("Kullanıcı bulunamadı")
+                completion(nil)
+            }
+        }
+    }
+    
     func signOut()throws{
         try firebaseAuth.signOut()
     }
@@ -133,8 +160,11 @@ class AuthManager {
         return userModel
     }
     
+    
 
     
     
     
 }
+
+

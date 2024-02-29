@@ -16,7 +16,16 @@ class PostManager {
     // Reference to Firestore
     let db = Firestore.firestore()
     let storageRef = Storage.storage().reference()
-
+    
+    func deletePostById(id:String){
+        db.collection("post").whereField("id", isEqualTo: id).getDocuments { snapshot, error in
+            if let a = error{
+                print(a.localizedDescription)
+            }else{
+                snapshot?.documents.first?.reference.delete()
+            }
+        }
+    }
     
     func addPost(_ placePost:PlacePosts,data: [Data]){
         var UUIDArr: [String] = []

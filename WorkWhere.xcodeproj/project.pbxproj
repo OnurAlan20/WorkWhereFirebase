@@ -17,6 +17,7 @@
 		09B00E1B2B8C8D8100AF623F /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B00E1A2B8C8D8100AF623F /* PostModel.swift */; };
 		09B00E1D2B8C8D9100AF623F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B00E1C2B8C8D9100AF623F /* UserModel.swift */; };
 		09B00E202B8C8E5F00AF623F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B00E1F2B8C8E5F00AF623F /* UserManager.swift */; };
+		09DF4CBD2B912A330034FB1E /* AuthApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF4CBC2B912A330034FB1E /* AuthApple.swift */; };
 		09E072B22B78AF0200FDB458 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E072B12B78AF0200FDB458 /* AppDelegate.swift */; };
 		09E072B42B78AF0200FDB458 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E072B32B78AF0200FDB458 /* SceneDelegate.swift */; };
 		09E072B62B78AF0200FDB458 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E072B52B78AF0200FDB458 /* ViewController.swift */; };
@@ -66,6 +67,8 @@
 		09B00E1A2B8C8D8100AF623F /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		09B00E1C2B8C8D9100AF623F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		09B00E1F2B8C8E5F00AF623F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		09DF4CBB2B9124570034FB1E /* WorkWhereRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkWhereRelease.entitlements; sourceTree = "<group>"; };
+		09DF4CBC2B912A330034FB1E /* AuthApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApple.swift; sourceTree = "<group>"; };
 		09E072AE2B78AF0200FDB458 /* WorkWhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkWhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E072B12B78AF0200FDB458 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09E072B32B78AF0200FDB458 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 		09E072B02B78AF0200FDB458 /* WorkWhere */ = {
 			isa = PBXGroup;
 			children = (
+				09DF4CBB2B9124570034FB1E /* WorkWhereRelease.entitlements */,
 				09E072C62B78AF6700FDB458 /* Models */,
 				09E072C52B78AF5E00FDB458 /* Manager */,
 				09E072B12B78AF0200FDB458 /* AppDelegate.swift */,
@@ -161,6 +165,7 @@
 				09A72C6E2B7B4CE5006977EF /* Brain.swift */,
 				09B00E1F2B8C8E5F00AF623F /* UserManager.swift */,
 				093C77F62B8DF69A00CA6B01 /* PostManager.swift */,
+				09DF4CBC2B912A330034FB1E /* AuthApple.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				09E072B42B78AF0200FDB458 /* SceneDelegate.swift in Sources */,
 				09A72C6F2B7B4CE5006977EF /* Brain.swift in Sources */,
 				093C77F72B8DF69A00CA6B01 /* PostManager.swift in Sources */,
+				09DF4CBD2B912A330034FB1E /* AuthApple.swift in Sources */,
 				09B00E202B8C8E5F00AF623F /* UserManager.swift in Sources */,
 				091B272E2B78DB5800B46A4B /* AuthManager.swift in Sources */,
 			);
@@ -474,9 +480,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WorkWhere/WorkWhereRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2F9PW5L7B9;
+				DEVELOPMENT_TEAM = 4T9VV5FWVL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WorkWhere/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
