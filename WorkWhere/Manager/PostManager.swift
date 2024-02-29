@@ -43,7 +43,7 @@ class PostManager {
             ]
     
 
-            let data: [String: Any] = [
+        let data: [String: Any] = [
                 "id": placePost.id,
                 "imageUrls": UUIDArr,
                 "placeDescription": placePost.placeDescription,
@@ -51,14 +51,32 @@ class PostManager {
                 "placeTitle": placePost.placeTitle,
                 "userId": placePost.userId
             ]
+
             
-            db.collection("post").addDocument(data: data) { error in
+        db.collection("post").addDocument(data: data) { error in
                 if let error = error {
                     print("Error adding document: \(error)")
                 } else {
                     print("Document added successfully")
                 }
             }
+        db.collection("user").whereField("id", isEqualTo: placePost.userId).getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                let doc = querySnapshot!.documents.first!
+                
+                self.db.collection("user").document(doc.documentID).updateData(["propertyName": "newValue"]) { error in
+                    if let error = error {
+                        print("Error updating document \(doc.documentID): \(error)")
+                    } else {
+                        print("Document \(doc.documentID) successfully updated")
+                    }
+                }
+                    
+                
+            }
+        }
     }
     
     func getAllPosts(completion: @escaping ([PlacePosts]?, Error?) -> Void) {
